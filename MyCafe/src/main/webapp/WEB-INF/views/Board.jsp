@@ -1,18 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page pageEncoding="utf-8" language="java" contentType="text/html; charset=utf-8" %>
 <%@ page session="false" %>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+<meta charset="UTF-8">
+<title>게시판</title>
 </head>
-
 <body>
-<h1>
-	Hello world!  
-</h1>
+자유게시판
 
-<P>  The time on the server is ${serverTime}. </P>
-
-<button type="button" onclick="location.href='Board'">게시판</button>
 </body>
 </html>

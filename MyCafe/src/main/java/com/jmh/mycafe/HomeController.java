@@ -36,4 +36,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	/*
+	 * @RequestMapping(value = "Board", method = RequestMethod.GET) public String
+	 * Board(Model model){
+	 * 
+	 * return "Board"; }
+	 */
+	
+	
 }
