@@ -22,4 +22,7 @@
  		values (#{bno}, #{title}, #{content}, #{writer})
  	</insert>
   	
+  	<select id="read" resultType="com.jmh.mapper.BoardVO">
+  		select * from tb1_board where bno = #{bno}
+  	</select>
   </mapper>
