@@ -25,4 +25,8 @@
   	<select id="read" resultType="com.jmh.mapper.BoardVO">
   		select * from tb1_board where bno = #{bno}
   	</select>
+  	
+  	<delete id="delete">
+  		delete tb1_board where bno = #{bno}
+  	</delete>
   </mapper>
