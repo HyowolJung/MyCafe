@@ -1,4 +1,4 @@
-package com.jmh.mycafe;
+package com.jmh.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
