@@ -13,8 +13,9 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"com.jmh.mycafe"})
+@ComponentScan(basePackages = {"com.jmh.service"})
 @MapperScan(basePackages = {"com.jmh.mapper"})
+
 public class RootConfig {
 	
 	@Bean

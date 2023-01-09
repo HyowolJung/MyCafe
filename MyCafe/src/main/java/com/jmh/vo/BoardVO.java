@@ -1,4 +1,4 @@
-package com.jmh.mapper;
+package com.jmh.vo;
 
 import java.util.Date;
 
