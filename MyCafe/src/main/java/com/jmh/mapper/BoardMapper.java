@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Select;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-import com.jmh.vo.BoardVO;
+import com.jmh.domain.BoardVO;
 
 public interface BoardMapper {
 	//@Select("select * from tb1_board where bno > 0")

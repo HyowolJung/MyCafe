@@ -1,4 +1,4 @@
-package com.jmh.vo;
+package com.jmh.domain;
 
 import java.util.Date;
 

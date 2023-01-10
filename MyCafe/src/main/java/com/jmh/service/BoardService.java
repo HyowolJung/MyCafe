@@ -2,7 +2,7 @@ package com.jmh.service;
 
 import java.util.List;
 
-import com.jmh.vo.BoardVO;
+import com.jmh.domain.BoardVO;
 
 public interface BoardService {
 	public void register(BoardVO board);
