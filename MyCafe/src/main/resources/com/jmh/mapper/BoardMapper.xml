@@ -3,7 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.jmh.mapper.BoardMapper">
-  	<select id="getList" resultType="com.jmh.mapper.BoardVO">
+  	
+  	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
   	select * from tb1_board where bno > 0
   	]]>
@@ -22,7 +23,7 @@
  		values (#{bno}, #{title}, #{content}, #{writer})
  	</insert>
   	
-  	<select id="read" resultType="com.jmh.mapper.BoardVO">
+  	<select id="read" resultType="com.jmh.domain.BoardVO">
   		select * from tb1_board where bno = #{bno}
   	</select>
   	
@@ -38,4 +39,5 @@
   		updateDate = sysdate
   		where bno = #{bno}
   	</update>
+  
   </mapper>
