@@ -1,10 +1,10 @@
 package com.jmh.controller;
 
-import org.aspectj.lang.annotation.Before;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -12,7 +12,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -31,8 +30,20 @@ public class BoardControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
+	//게시글 목록
 	@Test
 	public void testList() throws Exception{
 		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list")).andReturn().getModelAndView().getModelMap());
+	}
+	
+	//게시글 등록
+	@Test
+	public void testRegister() throws Exception{
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
+				.param("title", "테스트 새 글 제목")
+				.param("content", "테스트 새 글 내용")
+				.param("writer", "user000"))
+				.andReturn().getModelAndView().getViewName();
+		log.info(resultPage);
 	}
 }

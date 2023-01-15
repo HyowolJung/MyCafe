@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.jmh.mycafe"})
+@ComponentScan(basePackages = {"com.jmh.controller"})
 public class ServletConfig implements WebMvcConfigurer{
 
 	@Override
