@@ -27,9 +27,9 @@
 					<td><c:out value="${board.bno}" /></td>
 					<td><c:out value="${board.title}" /></td>
 					<td><c:out value="${board.writer}" /></td>
-					<td><fmt:formatDate pattern="yyyy-mm-dd"
+					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value="${board.regdate}" /></td>
-					<td><fmt:formatDate pattern="yyyy-mm-dd"
+					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value="${board.updateDate}" /></td>
 				</tr>
 			</c:forEach>
@@ -37,23 +37,15 @@
 
 	</div>
 
+	<button id ='regBtn' type ="button" class="btn btn-xs pull-right">게시글 등록버튼</button>
 
-
-	<!-- <div class="container">
-		<div= "row">
-			<table class="table table-stripped"
-				style="text-align: center; boarder: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">번호</th>
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-					</tr>
-				</thead>
-				
-			</table>
-	</div> -->
-
+<script src="http://code.jquery.com/jquery-latest.min.js">
+$(document).ready({
+	$("#regBtn").on("click", function(){
+		location.href  ="/board/register";
+	});
+	
+});
+</script>	
 </body>
 </html>
