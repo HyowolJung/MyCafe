@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>board/list.jsp</title>
+<title>/board/list.jsp</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 	<div>
@@ -25,7 +26,9 @@
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<td><c:out value="${board.bno}" /></td>
-					<td><c:out value="${board.title}" /></td>
+					<td><a href='/board/get?bno=<c:out value="${board.bno}" />'>
+					<c:out value="${board.title}" /></a></td>
+					<%-- <td><c:out value="${board.title}" /></td> --%>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value="${board.regdate}" /></td>
@@ -37,15 +40,17 @@
 
 	</div>
 
-	<button id ='regBtn' type ="button" class="btn btn-xs pull-right">게시글 등록버튼</button>
+	<button id ='regBtn' type ="button" class="btn btn-xs pull-right">글쓰기</button>
 
-<script src="http://code.jquery.com/jquery-latest.min.js">
-$(document).ready({
+<script type="text/javascript">
+$(document).ready(function(){
+		
 	$("#regBtn").on("click", function(){
-		location.href  ="/board/register";
-	});
-	
+		self.location = "/board/register";
+	});	
+		
 });
+
 </script>	
 </body>
 </html>

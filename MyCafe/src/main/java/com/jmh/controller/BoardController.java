@@ -41,6 +41,12 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
+	//게시글 등록 페이지로 이동
+	@GetMapping("/register")
+	public void register() {
+		
+	}
+	
 	@GetMapping("/get")
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		log.info("/get");
