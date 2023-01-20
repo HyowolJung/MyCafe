@@ -6,12 +6,13 @@
   	
   	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from tb1_board where bno > 0
+  	select * from board where bno > 0 
   	]]>
  	</select>
  	
+ 	<!-- and bgno = #{bgno}  -->
  	<insert id="insert">
- 		insert into tb1_board (bno, title, content, writer)
+ 		insert into board (bno, title, content, writer)
  		values (seq_board.nextval, #{title}, #{content}, #{writer})
  	</insert>
  	
@@ -19,20 +20,20 @@
  		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
  		select seq_board.nextval from dual
  		</selectKey>
- 		insert into tb1_board (bno, title, content, writer)
+ 		insert into board (bno, title, content, writer)
  		values (#{bno}, #{title}, #{content}, #{writer})
  	</insert>
   	
   	<select id="read" resultType="com.jmh.domain.BoardVO">
-  		select * from tb1_board where bno = #{bno}
+  		select * from board where bno = #{bno}
   	</select>
   	
   	<delete id="delete">
-  		delete tb1_board where bno = #{bno}
+  		delete board where bno = #{bno}
   	</delete>
   	
   	<update id="update">
-  		update tb1_board
+  		update board
   		set title = #{title},
   		content = #{content},
   		writer = #{writer},
