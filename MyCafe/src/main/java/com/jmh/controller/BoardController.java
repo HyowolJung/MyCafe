@@ -53,14 +53,14 @@ public class BoardController {
 //		model.addAttribute("board", service.get(bno));
 //	}
 //	
-//	@PostMapping("/modify")
-//	public String modify(BoardVO board, RedirectAttributes rttr) {
-//		log.info("modify: " + board);
-//		if(service.modify(board)) {
-//			rttr.addFlashAttribute("result", "success");
-//		}
-//	return "redirect:/board/list";	
-//	}
+	@PostMapping("/modify")
+	public String modify(BoardVO board, RedirectAttributes rttr) {
+		log.info("modify: " + board);
+		if(service.modify(board)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+	return "redirect:/board/list";	
+	}
 	// 게시글 수정&삭제
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {

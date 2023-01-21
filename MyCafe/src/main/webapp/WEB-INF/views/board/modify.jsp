@@ -11,7 +11,7 @@
 <title>/board/modify.jsp</title>
 </head>
 <body>
-	<div>
+	<form role="form" action="/board/modify" method="post">
 		<div class="form-group">
 			<label>Bno</label> <input name='bno'
 				value='<c:out value = "${board.bno}" />' readonly="readonly">
@@ -22,7 +22,7 @@
 		</div>
 		<div class="form-group">
 			<label>Text area</label>
-			<textarea name='content' rows="3" readonly="readonly"><c:out
+			<textarea name='content' rows="3"><c:out
 					value="${board.content}" /></textarea>
 		</div>
 		<div class="form-group">
@@ -31,23 +31,38 @@
 		</div>
 		<div class="form-group">
 			<label>RegDate</label> <input name='RegDate'
-				value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.regdate}" />' readonly="readonly">
+				value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.regdate}" />'
+				readonly="readonly">
 		</div>
 		<div class="form-group">
 			<label>UpdateDate</label> <input name='updateDate'
-				value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updateDate}" />' readonly="readonly">
+				value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updateDate}" />'
+				readonly="readonly">
 		</div>
 
 		<button type="submit" data-opper='modify'>수정하기</button>
 		<button type="submit" data-opper='remove'>삭제하기</button>
 		<button type="submit" data-opper='list'>목록</button>
-	</div>
-<script type="text/javascript">
+	</form>
+	<script type="text/javascript">
+		$(documnet).ready(function() {
+			var fomObj = $("form");
+			$('button').on("click", function(e) {
+				e.preventDefault();
+				var operation = $(this).data("oper");
 
+				consol.log(operation);
 
+				if (operation === 'remove') {
+					formObj.attr("action", "/board/remove");
+				} else if (operation === 'list') {
+					self.location = "/board/list";
+					return;
+				}
+				formObj.submit();
+			});
+		});
+	</script>
 
-
-</script>
-	
 </body>
 </html>
