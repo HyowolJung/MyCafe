@@ -40,25 +40,41 @@
 				readonly="readonly">
 		</div>
 
-		<button type="submit" data-opper='modify'>수정하기</button>
-		<button type="submit" data-opper='remove'>삭제하기</button>
-		<button type="submit" data-opper='list'>목록</button>
+		<button type="submit" data-oper='modify'>수정하기</button>
+		<button type="submit" data-oper='remove'>삭제하기</button>
+		<button type="submit" data-oper='list'>목록</button>
 	</form>
+
 	<script type="text/javascript">
 		$(documnet).ready(function() {
-			var fomObj = $("form");
+
+			var formObj = $("form");
+
 			$('button').on("click", function(e) {
 				e.preventDefault();
+
 				var operation = $(this).data("oper");
 
 				consol.log(operation);
-
-				if (operation === 'remove') {
+				
+				$("button[data-oper='remove']").on("click", function(e) {
+					formObj.attr("action", "/board/remove");
+				});
+				
+				$("button[data-oper='list']").on("click", function(e) {
+					formObj.attr("action", "/board/list").attr("method", "get");
+					formObj.empty();
+					return;
+				});
+				
+				/* if (operation === 'remove') {
 					formObj.attr("action", "/board/remove");
 				} else if (operation === 'list') {
-					self.location = "/board/list";
+					formObj.attr("action", "/board/list").attr("method", "get")
+					formObj.empty();
+					//self.location = "/board/list";
 					return;
-				}
+				} */
 				formObj.submit();
 			});
 		});
