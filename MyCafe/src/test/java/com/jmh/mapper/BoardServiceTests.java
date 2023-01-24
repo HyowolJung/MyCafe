@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.jmh.domain.BoardVO;
+import com.jmh.domain.Criteria;
 import com.jmh.service.BoardService;
 
 import lombok.Setter;
@@ -41,10 +42,16 @@ public class BoardServiceTests {
 		log.info("생성된 게시물의 번호: " + board.getBno());
 	}
 	
+//	@Test
+//	public void testGetList() {
+//		service.getList().forEach(board -> log.info(board));
+//	}
+	
 	@Test
 	public void testGetList() {
-		service.getList().forEach(board -> log.info(board));
+		service.getList(new Criteria()).forEach(board -> log.info(board));
 	}
+
 
 	@Test
 	public void testGet() {
