@@ -2,20 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.jmh.mapper.BoardMapper">
-  	
-  	<select id="getList" resultType="com.jmh.domain.BoardVO">
+<mapper namespace="com.jmh.mapper.BoardMapper">
+
+	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
   	select * from board where bno > 0 
   	]]>
- 	</select>
- 	
- 	<select id="getListWithPaging" resultType="com.jmh.domain.BoardVO">
+	</select>
+
+	<select id="getListWithPaging"
+		resultType="com.jmh.domain.BoardVO">
  	<![CDATA[
   	select bno, title, content, writer, regdate, updatedate
   	from 
   	(
-  	select /*+INDEX_DESC(tb1_board pk_board) */
+  	select /*+INDEX_DESC(board pk_board) */
   	rownum rn, bno, title, content, writer, regdate, updatedate
   	from 
   	board
@@ -24,37 +25,38 @@
   	where rn > (#{pageNum} -1) * #{amount}
   	
   	]]>
- 	</select>
- 	
- 	<!-- and bgno = #{bgno}  -->
- 	<insert id="insert">
- 		insert into board (bno, title, content, writer)
- 		values (seq_board.nextval, #{title}, #{content}, #{writer})
- 	</insert>
- 	
- 	<insert id="insertSelectKey">
- 		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
- 		select seq_board.nextval from dual
- 		</selectKey>
- 		insert into board (bno, title, content, writer)
- 		values (#{bno}, #{title}, #{content}, #{writer})
- 	</insert>
-  	
-  	<select id="read" resultType="com.jmh.domain.BoardVO">
-  		select * from board where bno = #{bno}
-  	</select>
-  	
-  	<delete id="delete">
-  		delete board where bno = #{bno}
-  	</delete>
-  	
-  	<update id="update">
-  		update board
-  		set title = #{title},
-  		content = #{content},
-  		writer = #{writer},
-  		updateDate = sysdate
-  		where bno = #{bno}
-  	</update>
-  
-  </mapper>
+	</select>
+
+	<!-- and bgno = #{bgno} -->
+	<insert id="insert">
+		insert into board (bno, title, content, writer)
+		values (seq_board.nextval, #{title}, #{content}, #{writer})
+	</insert>
+
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE"
+			resultType="long">
+			select seq_board.nextval from dual
+		</selectKey>
+		insert into board (bno, title, content, writer)
+		values (#{bno}, #{title}, #{content}, #{writer})
+	</insert>
+
+	<select id="read" resultType="com.jmh.domain.BoardVO">
+		select * from board where bno = #{bno}
+	</select>
+
+	<delete id="delete">
+		delete board where bno = #{bno}
+	</delete>
+
+	<update id="update">
+		update board
+		set title = #{title},
+		content = #{content},
+		writer = #{writer},
+		updateDate = sysdate
+		where bno = #{bno}
+	</update>
+
+</mapper>
