@@ -2,7 +2,7 @@
 <%@ page pageEncoding="utf-8" language="java"
 	contentType="text/html; charset=utf-8"%>
 <%@ page session="false"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,12 +25,9 @@
 
 			<c:forEach items="${list}" var="board">
 				<tr>
-					<td><c:out value="${board.bno}" /></td>
-					<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'>
-					<%-- <td>${board.bno}</td>
-					<td><a href="<c:url value='/board/get?bno=${board.bno}&bgno=${bgno}'/>"> --%>
-					<c:out value="${board.title}" /></a></td>
-					<%-- <td><c:out value="${board.title}" /></td> --%>
+					<td><c:out value="${board.bno}"/></td>
+					<%-- <td><a href='/board/get?bno=<c:out value="${board.bno}"/>'&'/board/get?bgno=<c:out value="${board.bgno}">'<c:out value="${board.title}"/></a></td> --%>
+					<td><a href="/board/get?bno=${board.bno} & bgno=${board.bgno}"></a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value="${board.regdate}" /></td>
@@ -41,6 +38,11 @@
 		</table>
 
 	</div>
+<%-- 
+<td><c:out value="${board.bno}"/></a>
+<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'> <c:out value = "${board.title}"/></a></td> 
+--%>
+
 
 	<button id ='regBtn' type ="button" class="btn btn-xs pull-right">글쓰기</button>
 
