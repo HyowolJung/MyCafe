@@ -12,6 +12,18 @@
 </head>
 <body>
 	<div>
+		<c:choose>
+			<c:when test="${type == 1 }">
+				<h2>오류 게시판</h2>
+			</c:when>
+			<c:when test="${type == 2 }">
+				<h2>자유 게시판</h2>
+			</c:when>
+		</c:choose>
+	</div>
+	<button id='board1' type="button" class="btn btn-xs pull-right">오류게시판</button>
+	<button id='board2' type="button" class="btn btn-xs pull-right">자유게시판</button>
+	<div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
@@ -25,36 +37,39 @@
 
 			<c:forEach items="${list}" var="board">
 				<tr>
-					<td><c:out value="${board.bno}"/></td>
-					<%-- <td><a href='/board/get?bno=<c:out value="${board.bno}"/>'&'/board/get?bgno=<c:out value="${board.bgno}">'<c:out value="${board.title}"/></a></td> --%>
-					<td><a href="/board/get?bno=${board.bno} & bgno=${board.bgno}"></a></td>
+					<td><c:out value="${board.bno}" /></a>
+					<td><a href='/board/get?bno=<c:out value="${board.bno}"/> & bgno=<c:out value="${board.bgno}"/>'> <c:out value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd"
-							value="${board.regdate}" /></td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd"
-							value="${board.updateDate}" /></td>
-				</tr>
+					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
 			</c:forEach>
 		</table>
 
 	</div>
-<%-- 
+	<%-- 
+기존에 쓰던 거
 <td><c:out value="${board.bno}"/></a>
-<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'> <c:out value = "${board.title}"/></a></td> 
+<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'> <c:out value = "${board.title}"/></a></td>
+<td><c:out value="${board.writer}" /></td>
+<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td> 
 --%>
 
+	<%-- 
+<td>${board.bno }</td>
+<td><a href="<c:url value = '/board/get?bno={board.bno}'/>">${board.title }</a></td>
+<td>${board.writer }</td>
+ --%>
+	<button id='regBtn' type="button" class="btn btn-xs pull-right">글쓰기</button>
 
-	<button id ='regBtn' type ="button" class="btn btn-xs pull-right">글쓰기</button>
+	<script type="text/javascript">
+		$(document).ready(function() {
 
-<script type="text/javascript">
-$(document).ready(function(){
-		
-	$("#regBtn").on("click", function(){
-		self.location = "/board/register";
-	});	
-		
-});
+			$("#regBtn").on("click", function() {
+				self.location = "/board/register";
+			});
 
-</script>	
+		});
+	</script>
 </body>
 </html>

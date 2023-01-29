@@ -6,7 +6,7 @@
 
 	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from board where bno > 0 and bgno=#{bgno}
+  	select * from board where bno > 0
   	]]>
 	</select>
 
@@ -22,12 +22,10 @@
   	board
   	where rownum <= #{pageNum} * #{amount}
   	)
-  	where rn > (#{pageNum} -1) * #{amount}
-  	
+  	where rn > (#{pageNum} -1) * #{amount} 
   	]]>
 	</select>
 
-	<!-- and bgno = #{bgno} -->
 	<insert id="insert">
 		insert into board (bno, title, content, writer)
 		values (seq_board.nextval, #{title}, #{content}, #{writer})

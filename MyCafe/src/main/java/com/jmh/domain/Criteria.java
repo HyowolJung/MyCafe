@@ -10,16 +10,16 @@ import lombok.ToString;
 public class Criteria {
 	private int pageNum;
 	private int amount;
-	private int bgno;
+	//private int cribgno;
 	
 	public Criteria ( ) {
-		this(1,10,1);
+		this(1,10);
 	}
 
-	public Criteria(int pageNum, int amount, int bgno) {
+	public Criteria(int pageNum, int amount) { //,int cribgno
 		this.pageNum = pageNum;
 		this.amount = amount;
-		this.bgno = bgno;
+		//this.cribgno = cribgno;
 		
 	}
 	
