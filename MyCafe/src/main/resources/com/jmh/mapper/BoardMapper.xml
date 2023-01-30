@@ -6,7 +6,7 @@
 
 	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from board where bno > 0
+  	select * from board where bno > 0 and bgno=#{bgno}
   	]]>
 	</select>
 

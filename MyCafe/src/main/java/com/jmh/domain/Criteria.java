@@ -10,7 +10,7 @@ import lombok.ToString;
 public class Criteria {
 	private int pageNum;
 	private int amount;
-	//private int cribgno;
+	private int cribgno;
 	
 	public Criteria ( ) {
 		this(1,10);
@@ -19,7 +19,7 @@ public class Criteria {
 	public Criteria(int pageNum, int amount) { //,int cribgno
 		this.pageNum = pageNum;
 		this.amount = amount;
-		//this.cribgno = cribgno;
+		this.cribgno = cribgno;
 		
 	}
 	

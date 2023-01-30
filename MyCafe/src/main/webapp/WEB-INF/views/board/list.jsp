@@ -13,10 +13,10 @@
 <body>
 	<div>
 		<c:choose>
-			<c:when test="${type == 1 }">
+			<c:when test="${bgno == 1 }">
 				<h2>오류 게시판</h2>
 			</c:when>
-			<c:when test="${type == 2 }">
+			<c:when test="${bgno == 2 }">
 				<h2>자유 게시판</h2>
 			</c:when>
 		</c:choose>
