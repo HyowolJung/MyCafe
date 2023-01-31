@@ -21,8 +21,6 @@
 			</c:when>
 		</c:choose>
 	</div>
-	<button id='board1' type="button" class="btn btn-xs pull-right">오류게시판</button>
-	<button id='board2' type="button" class="btn btn-xs pull-right">자유게시판</button>
 	<div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
@@ -37,7 +35,7 @@
 
 			<c:forEach items="${list}" var="board">
 				<tr>
-					<td><c:out value="${board.bno}" /></a>
+					<td><c:out value="${board.bno}" />
 					<td><a href='/board/get?bno=<c:out value="${board.bno}"/> & bgno=<c:out value="${board.bgno}"/>'> <c:out value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
