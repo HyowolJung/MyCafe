@@ -36,6 +36,7 @@ public class BoardController {
 	public void list(Criteria cri, Model model) {
 		log.info("list");
 		model.addAttribute("list", service.getList(cri));
+		model.addAttribute("bgno", bgno);
 	}
 	
 	//게시글 등록
