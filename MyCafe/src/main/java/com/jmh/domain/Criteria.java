@@ -13,10 +13,10 @@ public class Criteria {
 	private int cribgno;
 	
 	public Criteria ( ) {
-		this(1,10);
+		this(1,10,1);
 	}
 
-	public Criteria(int pageNum, int amount) { //,int cribgno
+	public Criteria(int pageNum, int amount, int cribgno) { //,int cribgno
 		this.pageNum = pageNum;
 		this.amount = amount;
 		this.cribgno = cribgno;

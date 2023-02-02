@@ -76,6 +76,7 @@ public class BoardController {
 		model.addAttribute("board", service.get(bno));
 	}
 	
+	//게시글 삭제
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
 		log.info("remove..." + bno);
