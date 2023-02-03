@@ -1,6 +1,5 @@
 package com.jmh.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +32,7 @@ public class BoardController {
 //	}
 	
 	@GetMapping("/list")
-	public void list(Criteria cri, Model model) {
+	public void list(Criteria cri, Model model, int bgno) {
 		log.info("list");
 		model.addAttribute("list", service.getList(cri));
 		model.addAttribute("bgno", bgno);
