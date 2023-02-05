@@ -25,7 +25,6 @@ public class BoardServiceImpl implements BoardService{
 	public void register(BoardVO board) {
 		log.info("register....." + board);
 		mapper.insertSelectKey(board);
-		
 	}
 	//게시글 목록
 	@Override
@@ -48,19 +47,18 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.delete(bno) == 1;
 	}
 
-//	@Override
-//	public List<BoardVO> getList() {
-//		log.info("getList...............");
-//		return mapper.getList();
-//	}
-	
-	//게시글 페이징
 	@Override
-	public List<BoardVO> getList(Criteria cri) {
-		log.info("get List with criteria: " + cri);
-		return mapper.getListWithPaging(cri);
+	public List<BoardVO> getList() {
+		log.info("getList...............");
+		return mapper.getList();
 	}
 	
-	
-	
+	//게시글 페이징
+//	@Override
+//	public List<BoardVO> getList(Criteria cri) {
+//		log.info("get List with criteria: " + cri);
+//		return mapper.getListWithPaging(cri);
+//	}
+
+		
 }

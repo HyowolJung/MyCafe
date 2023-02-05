@@ -6,11 +6,11 @@
 
 	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from board where bno > 0 and bgno=#{bgno}
+  	select * from board where bno > 0 and bgno="1"
   	]]>
 	</select>
 
-	<select id="getListWithPaging"
+	<!-- <select id="getListWithPaging"
 		resultType="com.jmh.domain.BoardVO">
  	<![CDATA[
   	select bno, title, content, writer, regdate, updatedate
@@ -22,9 +22,9 @@
   	board
   	where rownum <= #{pageNum} * #{amount}
   	)
-  	where rn > (#{pageNum} -1) * #{amount} and bgno=#{bgno}
+  	where rn > (#{pageNum} -1) * #{amount}
   	]]>
-	</select>
+	</select> -->
 
 	<insert id="insert">
 		insert into board (bno, title, content, writer)

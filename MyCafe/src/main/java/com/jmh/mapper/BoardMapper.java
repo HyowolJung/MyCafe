@@ -9,7 +9,7 @@ public interface BoardMapper {
 	//@Select("select * from tb1_board where bno > 0")
 	//게시글 등록
 	public List<BoardVO> getList();
-	public List<BoardVO> getListWithPaging(Criteria cri);
+	//public List<BoardVO> getListWithPaging(Criteria cri);
 	
 	//게시글 등록
 	public void insert(BoardVO board);

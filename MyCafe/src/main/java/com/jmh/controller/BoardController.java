@@ -32,10 +32,10 @@ public class BoardController {
 //	}
 	
 	@GetMapping("/list")
-	public void list(Criteria cri, Model model, int bgno) {
+	public void list(Model model) { //Criteria cri, 
 		log.info("list");
-		model.addAttribute("list", service.getList(cri));
-		model.addAttribute("bgno", bgno);
+		model.addAttribute("list", service.getList());
+		
 	}
 	
 	//게시글 등록
