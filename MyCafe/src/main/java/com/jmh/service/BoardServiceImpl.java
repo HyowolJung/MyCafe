@@ -46,7 +46,8 @@ public class BoardServiceImpl implements BoardService{
 		log.info("remove....." + bno);
 		return mapper.delete(bno) == 1;
 	}
-
+	
+	//게시글 목록
 	@Override
 	public List<BoardVO> getList() {
 		log.info("getList...............");

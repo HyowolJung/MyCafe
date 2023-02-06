@@ -68,7 +68,7 @@ public class BoardController {
 		}
 	return "redirect:/board/list";	
 	}
-	// 게시글 수정&삭제
+	// 게시글 수정&게시글 번호
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		log.info("/get or modify");
