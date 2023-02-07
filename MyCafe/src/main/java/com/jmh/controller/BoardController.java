@@ -31,6 +31,7 @@ public class BoardController {
 //		model.addAttribute("list", service.getList());
 //	}
 	
+	//게시글 목록
 	@GetMapping("/list")
 	public void list(Model model) { //Criteria cri, 
 		log.info("list");
@@ -60,7 +61,7 @@ public class BoardController {
 //		model.addAttribute("board", service.get(bno));
 //	}
 	
-	@PostMapping("/modify")
+	//게시글 수정ㅊ	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) {
 		log.info("modify: " + board);
 		if(service.modify(board)) {
@@ -68,7 +69,7 @@ public class BoardController {
 		}
 	return "redirect:/board/list";	
 	}
-	// 게시글 수정&게시글 번호
+	// 게시글 수정페이지 이동 &게시글 번호
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		log.info("/get or modify");
