@@ -61,7 +61,8 @@ public class BoardController {
 //		model.addAttribute("board", service.get(bno));
 //	}
 	
-	//게시글 수정ㅊ	@PostMapping("/modify")
+	//게시글 수정
+	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) {
 		log.info("modify: " + board);
 		if(service.modify(board)) {

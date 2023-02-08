@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-	<div>
+<%-- 	<div class="titlebox">
 		<c:choose>
 			<c:when test="${bgno == 1 }">
 				<h2>오류 게시판</h2>
@@ -20,7 +20,8 @@
 				<h2>자유 게시판</h2>
 			</c:when>
 		</c:choose>
-	</div>
+		
+	</div> --%>
 	<div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
@@ -36,15 +37,17 @@
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<td><c:out value="${board.bno}" />
-					<td><a href='/board/get?bno=<c:out value="${board.bno}"/> & /board/get?bgno=<c:out value="${board.bgno}"/>'> <c:out value="${board.title}" /></a></td>
+					<td><c:out value="${board.title}" /></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
+				</tr>	
 			</c:forEach>
 		</table>
 
 	</div>
 	<%-- 
+<td><a href='/board/get?bno=<c:out value="${board.bno}"/> & /board/get?bgno=<c:out value="${board.bgno}"/>'> <c:out value="${board.title}" /></a></td>
 기존에 쓰던 거
 <td><c:out value="${board.bno}"/></a>
 <td><a href='/board/get?bno=<c:out value="${board.bno}"/>'> <c:out value = "${board.title}"/></a></td>

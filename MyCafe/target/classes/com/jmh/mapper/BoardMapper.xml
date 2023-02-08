@@ -6,7 +6,7 @@
 
 	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from board where bno > 0 and bgno="1"
+  	select * from board where bno > 0
   	]]>
 	</select>
 
@@ -26,7 +26,7 @@
   	]]>
 	</select> -->
 
-	<insert id="insert">
+	<!-- <insert id="insert">
 		insert into board (bno, title, content, writer)
 		values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
@@ -38,7 +38,7 @@
 		</selectKey>
 		insert into board (bno, title, content, writer)
 		values (#{bno}, #{title}, #{content}, #{writer})
-	</insert>
+	</insert> -->
 
 	<select id="read" resultType="com.jmh.domain.BoardVO">
 		select * from board where bno = #{bno}
