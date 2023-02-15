@@ -36,7 +36,6 @@ public class BoardController {
 	public void list(Model model) { //Criteria cri, 
 		log.info("list");
 		model.addAttribute("list", service.getList());
-		
 	}
 	
 	//게시글 등록
