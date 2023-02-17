@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-<div class="titlebox">
+<%-- <div class="titlebox">
 		<c:choose>
 			<c:when test="${bgno == 1 }">
 				<h2>오류 게시판</h2>
@@ -21,7 +21,7 @@
 			</c:when>
 		</c:choose>
 		
-	</div>
+	</div> --%>
 	<div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
