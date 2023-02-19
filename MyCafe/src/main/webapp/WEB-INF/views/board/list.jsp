@@ -48,7 +48,6 @@
 				</tr>	
 			</c:forEach>
 		</table>
-
 	</div>
 
 	<button id='regBtn' type="button" class="btn btn-xs pull-right">글쓰기</button>
