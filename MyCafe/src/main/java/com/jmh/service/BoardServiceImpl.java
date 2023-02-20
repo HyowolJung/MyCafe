@@ -28,7 +28,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	//게시글 목록
 	@Override
-	public BoardVO get(Long bno) {
+	public BoardVO get(Long bno, Long bgno) {
 		log.info("get......" + bno);
 		return mapper.read(bno);
 	}

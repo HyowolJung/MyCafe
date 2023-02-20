@@ -71,9 +71,9 @@ public class BoardController {
 	}
 	// 게시글 수정페이지 이동 &게시글 번호
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("bno") Long bno, Model model) {
+	public void get(@RequestParam("bno") Long bno,@RequestParam("bgno") Long bgno, Model model) {
 		log.info("/get or modify");
-		model.addAttribute("board", service.get(bno));
+		model.addAttribute("board", service.get(bno, bgno));
 	}
 	
 	//게시글 삭제
@@ -87,3 +87,10 @@ public class BoardController {
 		
 	}
 }
+
+////게시글 수정페이지 이동 &게시글 번호
+//	@GetMapping({"/get", "/modify"})
+//	public void get(@RequestParam("bno") Long bno, Model model) {
+//		log.info("/get or modify");
+//		model.addAttribute("board", service.get(bno));
+//	}

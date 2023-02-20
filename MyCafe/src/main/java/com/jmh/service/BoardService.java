@@ -10,7 +10,7 @@ public interface BoardService {
 	public void register(BoardVO board);
 	
 	//게시글 번호 목록
-	public BoardVO get(Long bno);
+	public BoardVO get(Long bno, Long bgno);
 	
 	//게시글 수정
 	public boolean modify(BoardVO board);

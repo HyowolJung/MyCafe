@@ -11,8 +11,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-<!-- <button href="/board/list?bgno=1" type="button" class="btn btn-xs pull-right">공지게시판</button>
-<button href="/board/list?bgno=2" type="button" class="btn btn-xs pull-right">자유게시판</button> -->
+<button href="/board/list?bgno=1" type="button" class="btn btn-xs pull-right">공지게시판</button>
+<button href="/board/list?bgno=2" type="button" class="btn btn-xs pull-right">자유게시판</button>
 
 <c:choose >
 	<c:when test="${bgno == 1}">
