@@ -15,82 +15,83 @@ import com.jmh.service.BoardService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-
 @Controller
 @Log4j
 @RequestMapping("/board/*")
 @AllArgsConstructor
 public class BoardController {
-	
+
 	private BoardService service;
-	
-	//게시글 목록
+
+	// 게시글 목록
 //	@GetMapping("/list")
 //	public void list(Model model) {
 //		log.info("list");
 //		model.addAttribute("list", service.getList());
 //	}
-	
-	//게시글 목록
+
+	// 1. 게시글 목록페이지 (/board/list)
 	@GetMapping("/list")
-	public void list(Model model) { //Criteria cri, 
+	public void list(Model model) { // Criteria cri,
 		log.info("list");
-		model.addAttribute("list", service.getList());
+		model.addAttribute("list", service.getList()); // cri
 	}
-	
-	//게시글 등록
+
+	// 2-1. 게시글 등록 페이지(board/list-글쓰기)
+	@GetMapping("/register")
+	public void register() {
+
+	}
+
+	// 2-2. 게시글 등록페이지 (board/list/register-등록 완료)
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
-		
+
 		log.info("register: " + board);
 		service.register(board);
 		rttr.addFlashAttribute("result", board.getBno());
 		return "redirect:/board/list";
 	}
-	
-	//게시글 등록 페이지로 이동
-	@GetMapping("/register")
-	public void register() {
-		
+
+	// 3. 게시글 내용 페이지 (board/list/get)
+	@GetMapping("/get")
+	public void get(@RequestParam("bno") Long bno, Model model) {
+		log.info("/get");
+		model.addAttribute("board", service.get(bno));
 	}
-	
-//	@GetMapping("/get")
-//	public void get(@RequestParam("bno") Long bno, Model model) {
-//		log.info("/get");
-//		model.addAttribute("board", service.get(bno));
-//	}
-	
-	//게시글 수정
+
+	// 4-1. 게시글 수정페이지 (/board/list/get-수정)
+	@GetMapping("/modify")
+	public void modify(@RequestParam("bno") Long bno, Model model) {
+		log.info("/get");
+		model.addAttribute("board", service.get(bno));
+	}
+
+	// 4-2. 게시글 수정 페이지 (/board/list/get/modify-수정 완료)
 	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) {
 		log.info("modify: " + board);
-		if(service.modify(board)) {
-			rttr.addFlashAttribute("result", "success");
-		}
-	return "redirect:/board/list";	
-	}
-	// 게시글 수정페이지 이동 &게시글 번호
-	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("bno") Long bno,@RequestParam("bgno") Long bgno, Model model) {
-		log.info("/get or modify");
-		model.addAttribute("board", service.get(bno, bgno));
-	}
-	
-	//게시글 삭제
-	@PostMapping("/remove")
-	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
-		log.info("remove..." + bno);
-		if(service.remove(bno)) {
+		if (service.modify(board)) {
 			rttr.addFlashAttribute("result", "success");
 		}
 		return "redirect:/board/list";
-		
 	}
-}
 
-////게시글 수정페이지 이동 &게시글 번호
+	// 5. 게시글 삭제 페이지(/board/list/get/modify-삭제 완료)
+	@PostMapping("/remove")
+	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
+		log.info("remove..." + bno);
+		if (service.remove(bno)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		return "redirect:/board/list";
+
+	}
+//	// 게시글 수정페이지 이동 &게시글 번호
 //	@GetMapping({"/get", "/modify"})
-//	public void get(@RequestParam("bno") Long bno, Model model) {
+//	public void get(@RequestParam("bno") Long bno,@RequestParam("bgno") Long bgno, Model model) {
 //		log.info("/get or modify");
-//		model.addAttribute("board", service.get(bno));
+//		model.addAttribute("board", service.get(bno, bgno));
 //	}
+
+}

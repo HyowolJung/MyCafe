@@ -6,8 +6,8 @@
 
 	<select id="getList" resultType="com.jmh.domain.BoardVO">
   	<![CDATA[
-  	select * from board where bno > 0 and bgno = #{bgno}
-  	]]>
+  	select * from board where bno > 0
+	]]>
 	</select>
 
 	<select id="getListWithPaging"
@@ -37,11 +37,13 @@
 			select seq_board.nextval from dual
 		</selectKey>
 		insert into board (bno, title, content, writer)
-		values (#{bno}, #{title}, #{content}, #{writer})
+		values (#{bno},
+		#{title}, #{content}, #{writer})
 	</insert>
 
 	<select id="read" resultType="com.jmh.domain.BoardVO">
-		select * from board where bno = #{bno}
+		select * from board where bno =
+		#{bno}
 	</select>
 
 	<delete id="delete">
@@ -51,7 +53,8 @@
 	<update id="update">
 		update board
 		set title = #{title},
-		content = #{content},
+		content =
+		#{content},
 		writer = #{writer},
 		updateDate = sysdate
 		where bno = #{bno}

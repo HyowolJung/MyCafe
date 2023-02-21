@@ -14,14 +14,14 @@
 <button href="/board/list?bgno=1" type="button" class="btn btn-xs pull-right">공지게시판</button>
 <button href="/board/list?bgno=2" type="button" class="btn btn-xs pull-right">자유게시판</button>
 
-<c:choose >
+<%-- <c:choose >
 	<c:when test="${bgno == 1}">
 	<h1 class="h3 mb-2 text-gray-800">공지게시판</h1>
 	</c:when>
 	<c:when test="${scri.bgno == 2}">
 	<h1 class="h3 mb-2 text-gray-800">자유게시판</h1>
 	</c:when>
-</c:choose>
+</c:choose> --%>
 
 
 	<div>

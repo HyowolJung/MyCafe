@@ -7,22 +7,22 @@ import com.jmh.domain.Criteria;
 
 public interface BoardMapper {
 	//@Select("select * from tb1_board where bno > 0")
-	//게시글 등록
+	//1. 게시글 목록 페이지
 	public List<BoardVO> getList();
+	
 	//public List<BoardVO> getListWithPaging(Criteria cri);
 	
-	//게시글 등록
+	//2. 게시글 등록 페이지
 	public void insert(BoardVO board);
 	public void insertSelectKey(BoardVO board);
 	
-	//게시글 내용
+	//3. 게시글 내용 페이지
 	public BoardVO read(Long bno);
 	
-	//게시글 삭제
-	public int delete(Long bno);
-	
-	//게시글 수정
+	//4. 게시글 수정 페이지
 	public int update(BoardVO board);
 	
+	//6. 게시글 삭제 페이지
+	public int delete(Long bno);
 	
 }

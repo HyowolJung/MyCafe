@@ -40,8 +40,8 @@
 				readonly="readonly">
 		</div>
 
-		<button type="submit" data-oper='modify'>수정하기</button>
-		<button type="submit" data-oper='remove'>삭제하기</button>
+		<button type="submit" data-oper='modify'>수정 완료</button>
+		<button type="submit" data-oper='remove'>삭제 완료</button>
 		<button type="submit" data-oper='list'>목록</button>
 	</form>
 

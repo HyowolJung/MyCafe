@@ -28,7 +28,7 @@
 		<textarea class="form-control" rows="3" name ='writer' cols=""></textarea>
 		</div>
 		
-		<button type="submit">등록</button>
+		<button type="submit">등록 완료</button>
 		<button type="reset">취소</button>
 	</form>
 </div>

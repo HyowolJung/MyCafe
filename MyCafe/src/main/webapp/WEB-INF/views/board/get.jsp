@@ -13,7 +13,7 @@
 <body>
 	<div>
 		<div class="form-group">
-			<label>Bno</label> <input name='bno'
+			<label>Bno</label> <input name='bno' type="hidden"
 				value='<c:out value = "${board.bno}" />' readonly="readonly">
 		</div>
 		<div class="form-group">
@@ -30,7 +30,7 @@
 				value='<c:out value = "${board.writer}" />' readonly="readonly">
 		</div>
 
-		<button data-oper='modify'>수정하기</button>
+		<button data-oper='modify'>수정</button>
 		<button data-oper='list'>목록</button>
 
 		<form id='operForm' action="/board/modify" method="get">
