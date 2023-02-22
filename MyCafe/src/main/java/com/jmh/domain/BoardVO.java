@@ -13,5 +13,5 @@ public class BoardVO {
 	private Date regdate;
 	private Date updateDate;
 	private Long bgno;
-	
+
 }
