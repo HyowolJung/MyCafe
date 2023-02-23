@@ -11,18 +11,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-<button href="/board/list?bgno=1" type="button" class="btn btn-xs pull-right">공지게시판</button>
-<button href="/board/list?bgno=2" type="button" class="btn btn-xs pull-right">자유게시판</button>
 
-<%-- <c:choose >
-	<c:when test="${bgno == 1}">
-	<h1 class="h3 mb-2 text-gray-800">공지게시판</h1>
-	</c:when>
-	<c:when test="${scri.bgno == 2}">
-	<h1 class="h3 mb-2 text-gray-800">자유게시판</h1>
-	</c:when>
-</c:choose> --%>
-
+<a href="./board?bgno=1">공지게시판</a>
+<a href="./board?bgno=2">자유게시판</a>
 
 	<div>
 		<table class="table table-striped table-bordered table-hover">
