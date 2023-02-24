@@ -35,6 +35,12 @@ public class BoardController {
 	public void list(Model model) { // Criteria cri,
 		log.info("list");
 		model.addAttribute("list", service.getList()); // cri
+		
+		//bgno의 값에 따라서 
+		if bgno == 1{
+			model.addAttribute("list", service.getList());
+		}
+		
 	}
 
 	// 2-1. 게시글 등록 페이지(board/list-글쓰기)
