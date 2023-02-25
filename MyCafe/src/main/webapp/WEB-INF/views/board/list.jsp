@@ -29,6 +29,7 @@
 
 			<c:forEach items="${list}" var="board">
 				<tr>
+					<!-- bgno를 받아야 할 곳이 필요 -->
 					<td><c:out value="${board.bno}" />
 					<%-- <td><c:out value="${board.bgno}" /> --%>
 					<%-- <td><c:out value="${board.title}" /></td> --%>
