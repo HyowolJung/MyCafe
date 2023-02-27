@@ -40,7 +40,7 @@ public class BoardController {
 		if bgno == 1{
 			model.addAttribute("list", service.getList());
 		}else {
-			log.info("bgno 오류");
+			log.info(message);
 		}
 		
 	}
