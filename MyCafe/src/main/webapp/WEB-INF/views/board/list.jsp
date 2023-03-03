@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<a href="./board?bgno=1">공지게시판</a>
-<a href="./board?bgno=2">자유게시판</a>
+<a href="./board?bgno=1" value="1">공지게시판</a>
+<a href="./board?bgno=2" value="2">자유게시판</a>
 
 	<div>
 		<table class="table table-striped table-bordered table-hover">
