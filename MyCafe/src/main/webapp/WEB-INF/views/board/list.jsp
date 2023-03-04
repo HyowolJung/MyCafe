@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<a href="./board?bgno=1" value="1">공지게시판</a>
+<a href="./board?bgno=1" type="button" id="bgnohidden">공지게시판</a>
 <a href="./board?bgno=2" value="2">자유게시판</a>
 
 	<div>
@@ -31,7 +31,8 @@
 				<tr>
 					<!-- bgno를 받아야 할 곳이 필요 -->
 					<td><c:out value="${board.bno}" />
-					<%-- <td><c:out value="${board.bgno}" /> --%>
+					<input type="hidden" name="bgnohidden" value="${board.bgno} "/>
+					<%-- <td><c:out value="${board.bgno}" />  --%>
 					<%-- <td><c:out value="${board.title}" /></td> --%>
 					<td><a href='/board/get?bno=<c:out value="${board.bno}"/> & /board/get?bgno=<c:out value="${board.bgno}"/>'> <c:out value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
