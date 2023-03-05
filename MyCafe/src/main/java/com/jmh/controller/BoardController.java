@@ -31,7 +31,7 @@ public class BoardController {
 //	}
 
 	// 1. 게시글 목록페이지 (/board/list)
-	@GetMapping("/list")
+		@GetMapping("/list")
 	public void list(Model model, Long bgno) { // Criteria cri,
 		log.info("list");
 		model.addAttribute("list", service.getList()); // cri
