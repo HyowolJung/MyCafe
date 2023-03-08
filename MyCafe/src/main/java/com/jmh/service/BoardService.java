@@ -7,7 +7,7 @@ import com.jmh.domain.Criteria;
 
 public interface BoardService {
 	// 1. 게시글 목록 페이지
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(long bgno);
 
 //	public List<BoardVO> getList(Criteria cri);
 

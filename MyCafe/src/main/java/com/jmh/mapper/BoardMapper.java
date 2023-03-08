@@ -8,7 +8,7 @@ import com.jmh.domain.Criteria;
 public interface BoardMapper {
 	// @Select("select * from tb1_board where bno > 0")
 	// 1. 게시글 목록 페이지
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(long bgno);
 
 	// public List<BoardVO> getListWithPaging(Criteria cri);
 

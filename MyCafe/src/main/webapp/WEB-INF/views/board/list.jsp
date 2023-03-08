@@ -12,7 +12,7 @@
 <body>
 
 	<a href="./board?bgno=1" type="button" id="bgnohidden">공지게시판</a>
-	<a href="./board?bgno=2" value="2">자유게시판</a>
+	<a href="./board?bgno=2" type="button" id="bgnohidden2">자유게시판</a>
 
 	<div>
 		<table class="table table-striped table-bordered table-hover">
@@ -64,7 +64,7 @@
 					$.ajax({
 						url : "/board/list",
 						type : "POST",
-						data : "{bgno}",
+						data : "bgno",
 						/* dataType: */
 						success : function(data) {
 

@@ -22,9 +22,9 @@ public class BoardServiceImpl implements BoardService {
 
 	// 1. 게시글 목록 페이지
 	@Override
-	public List<BoardVO> getList() {
+	public List<BoardVO> getList(long bgno) {
 		log.info("getList...............");
-		return mapper.getList();
+		return mapper.getList(bgno);
 	}
 
 	// 게시글 페이징
