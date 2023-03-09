@@ -30,8 +30,7 @@
 				<tr>
 					<!-- bgno를 받아야 할 곳이 필요 -->
 					<td><c:out value="${board.bno}" /> <input type="hidden"
-						name="bgnohidden" value="${board.bgno} " /> <%-- <td><c:out value="${board.bgno}" />  --%>
-						<%-- <td><c:out value="${board.title}" /></td> --%>
+						name="bgnohidden" value="${board.bgno} " /> 
 					<td><a
 						href='/board/get?bno=<c:out value="${board.bno}"/> & /board/get?bgno=<c:out value="${board.bgno}"/>'>
 							<c:out value="${board.title}" />
@@ -45,6 +44,9 @@
 			</c:forEach>
 		</table>
 	</div>
+
+<%-- <td><c:out value="${board.bgno}" />  --%>
+						<%-- <td><c:out value="${board.title}" /></td> --%>
 
 	<button id='regBtn' type="button" class="btn btn-xs pull-right">글쓰기</button>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
