@@ -66,7 +66,7 @@
 					$.ajax({
 						url : "/board/list",
 						type : "POST",
-						data : "bgno",
+						data : "{bgno : bgno}",
 						/* dataType: */
 						success : function(data) {
 
