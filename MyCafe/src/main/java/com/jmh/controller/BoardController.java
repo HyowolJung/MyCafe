@@ -23,12 +23,12 @@ public class BoardController {
 
 	private BoardService service;
 
-	// 게시글 목록
-//	@GetMapping("/list")
-//	public void list(Model model) {
-//		log.info("list");
-//		model.addAttribute("list", service.getList());
-//	}
+	 게시글 목록
+	@GetMapping("/list")
+	public void list(Model model) {
+		log.info("list");
+		model.addAttribute("list", service.getList());
+	}
 
 	// 1. 게시글 목록페이지 (/board/list)
 		@GetMapping("/list")

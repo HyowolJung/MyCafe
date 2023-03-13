@@ -65,7 +65,7 @@
 				$("#bgnohidden").on("click", function() {
 					$.ajax({
 						url : "/board/list",
-						type : "POST",
+						type : "GET",
 						data : "{bgno : bgno}",
 						/* dataType: */
 						success : function(data) {
