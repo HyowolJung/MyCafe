@@ -23,15 +23,15 @@ public class BoardController {
 
 	private BoardService service;
 
-	 게시글 목록
-	@GetMapping("/list")
-	public void list(Model model) {
-		log.info("list");
-		model.addAttribute("list", service.getList());
-	}
+//	 게시글 목록
+//	@GetMapping("/list")
+//	public void list(Model model) {
+//		log.info("list");
+//		model.addAttribute("list", service.getList());
+//	}
 
 	// 1. 게시글 목록페이지 (/board/list)
-		@GetMapping("/list")
+		@PostMapping("/list")
 	public void list(@RequestParam("bgno") Model model, Long bgno) { // Criteria cri,
 		log.info("list");
 //		model.addAttribute("list", service.getList(bgno)); // cri
@@ -39,7 +39,7 @@ public class BoardController {
 		log.info("bgno값입니다." + bgno);
 		
 		//bgno의 값에 따라서 게시판이 출력해야할 데이터를 구분해야함.
-		if bgno == 1 {
+		if (bgno == 1) {
 			model.addAttribute("list", service.getList(bgno)); 
 		}else {
 			log.info("bgno 체크");
