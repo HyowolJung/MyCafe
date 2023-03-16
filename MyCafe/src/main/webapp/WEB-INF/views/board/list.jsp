@@ -30,7 +30,7 @@
 				<tr>
 					<!-- bgno를 받아야 할 곳이 필요 -->
 					<td><c:out value="${board.bno}" /> <input type="hidden"
-						name="bgnohidden" value="${board.bgno} " />
+						name="bgnohidden" value="type " />
 					<td><a
 						href='/board/get?bno=<c:out value="${board.bno}"/> & /board/get?bgno=<c:out value="${board.bgno}"/>'>
 							<c:out value="${board.title}" />
@@ -58,12 +58,22 @@
 			});
 
 			//버튼을 눌렀을 때 값 생성
-			
-			
-			
+			$(document).ready(function() {
 
+				$("#bgnohidden").on("click", function() {
+					$.ajax({
+						url : "/board/list",
+						type : "POST",
+						data : "{bgno : 1}",
+						/* dataType: */
+						success : function(data) {
+
+						}
+
+					});
+
+				}); 
 			});
-
 		});
 	</script>
 </body>
@@ -84,4 +94,5 @@
 
 					});
 
-				}); -->
+				}); 
+			});-->
