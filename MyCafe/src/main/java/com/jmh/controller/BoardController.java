@@ -35,15 +35,15 @@ public class BoardController {
 	public void list(@RequestParam(value="bgno") Model model, Long bgno) { // Criteria cri,
 		log.info("list");
 		model.addAttribute("list", service.getList(bgno)); // cri
-		//model.addAttribute("bgno", bgno);
+		model.addAttribute("bgno", bgno);
 		log.info("bgno값입니다." + bgno);
 		
-//		//bgno의 값에 따라서 게시판이 출력해야할 데이터를 구분해야함.
-//		if (bgno == 1) {
-//			model.addAttribute("list", service.getList(bgno)); 	
-//		}else {
-//			log.info("bgno 체크");
-//		}
+		//bgno의 값에 따라서 게시판이 출력해야할 데이터를 구분해야함.
+		if (bgno == 1) {
+			model.addAttribute("list", service.getList(bgno)); 	
+		}else {
+			log.info("bgno 체크");
+		}
 		
 	}
 
