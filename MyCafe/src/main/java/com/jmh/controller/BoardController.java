@@ -34,7 +34,7 @@ public class BoardController {
 		@GetMapping("/list")
 	public void list(@RequestParam(value="bgno") Model model, Long bgno) { // Criteria cri,
 		log.info("list");
-		model.addAttribute("list", service.getList(bgno)); // cri
+		//model.addAttribute("list", service.getList(bgno)); // cri
 		model.addAttribute("bgno", bgno);
 		log.info("bgno값입니다." + bgno);
 		
